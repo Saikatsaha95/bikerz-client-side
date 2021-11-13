@@ -1,0 +1,17 @@
+.footer {
+  background-color: rgba(0, 0, 0, 0.986);
+  color: white;
+  padding: 20px;
+}
+
+ul li {
+  list-style: none;
+  padding: 8px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 8px;
+}

@@ -1,0 +1,24 @@
+.add-service h2 {
+  text-align: center;
+}
+
+.add-service form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.add-service form input,
+textarea {
+  width: 40%;
+  margin-bottom: 15px;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.add-service h2 {
+  text-align: center;
+  margin-top: 40px;
+}
