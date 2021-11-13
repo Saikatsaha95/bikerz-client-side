@@ -9,12 +9,14 @@ const AddProduct = () => {
 
   const onSubmit = (data) => {
     console.log(data);
-    axios.post("http://localhost:5000/addproduct", data).then((result) => {
-      if (result.data.insertedId) {
-        alert("Service added");
-        reset();
-      }
-    });
+    axios
+      .post("https://warm-lake-37627.herokuapp.com/addproduct", data)
+      .then((result) => {
+        if (result.data.insertedId) {
+          alert("Service added");
+          reset();
+        }
+      });
   };
 
   return (

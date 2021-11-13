@@ -50,9 +50,9 @@ const PlaceOrderModal = ({
     const data = product;
     delete data._id;
     data.orderInfo = orderInfo;
-    data.status = "shipped";
+    data.status = "Pending";
     axios
-      .post("http://localhost:5000/orders", data)
+      .post("https://warm-lake-37627.herokuapp.com/orders", data)
       .then((res) => console.log(res.data))
       .finally(() => history.push("/dashboard/myOrders"));
     e.preventDefault();

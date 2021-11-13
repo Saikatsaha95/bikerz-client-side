@@ -13,20 +13,22 @@ const ManageProducts = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products")
+      .get("https://warm-lake-37627.herokuapp.com/products")
       .then((res) => setProducts(res.data));
   }, []);
 
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      axios.delete(`http://localhost:5000/products/${id}`).then((res) => {
-        if (res.data.deletedCount > 0) {
-          alert("product deleted");
-          const restData = products.filter((order) => order._id !== id);
-          setProducts(restData);
-        }
-      });
+      axios
+        .delete(`https://warm-lake-37627.herokuapp.com/products/${id}`)
+        .then((res) => {
+          if (res.data.deletedCount > 0) {
+            alert("product deleted");
+            const restData = products.filter((order) => order._id !== id);
+            setProducts(restData);
+          }
+        });
     }
   };
   return (

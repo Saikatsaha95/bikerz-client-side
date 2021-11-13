@@ -12,11 +12,13 @@ const MakeAdmin = () => {
 
   const handleAdminSubmit = (e) => {
     const user = { email };
-    axios.put("http://localhost:5000/users/admin", user).then((res) => {
-      if (res.data.modifiedCount) {
-        setSuccess(true);
-      }
-    });
+    axios
+      .put("https://warm-lake-37627.herokuapp.com/users/admin", user)
+      .then((res) => {
+        if (res.data.modifiedCount) {
+          setSuccess(true);
+        }
+      });
 
     e.preventDefault();
   };

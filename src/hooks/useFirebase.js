@@ -94,7 +94,7 @@ const useFirebase = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/users/${user.email}`)
+      .get(`https://warm-lake-37627.herokuapp.com/users/${user.email}`)
       .then((res) => setAdmin(res.data.admin));
   }, [user.email]);
 
@@ -112,7 +112,7 @@ const useFirebase = () => {
 
   const saveUser = (email, displayName, method) => {
     const user = { email, displayName };
-    axios[method]("http://localhost:5000/users", user).then();
+    axios[method]("https://warm-lake-37627.herokuapp.com/users", user).then();
   };
 
   return {

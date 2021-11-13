@@ -19,13 +19,13 @@ const ManageAllOrders = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/allorders")
+      .get("https://warm-lake-37627.herokuapp.com/allorders")
       .then((res) => setAllOrders(res.data));
   }, [isReload]);
 
   const handleStatus = (data) => {
-    data.status = "Approved";
-    const url = `http://localhost:5000/orders/${data._id}`;
+    data.status = "Shipped";
+    const url = `https://warm-lake-37627.herokuapp.com/orders/${data._id}`;
     axios
       .put(url, data)
       .then((res) => console.log("Updating order ", res.data))
@@ -35,13 +35,15 @@ const ManageAllOrders = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      axios.delete(`http://localhost:5000/orders/${id}`).then((res) => {
-        if (res.data.deletedCount > 0) {
-          alert("product deleted");
-          const restData = allOrders.filter((order) => order._id !== id);
-          setAllOrders(restData);
-        }
-      });
+      axios
+        .delete(`https://warm-lake-37627.herokuapp.com/orders/${id}`)
+        .then((res) => {
+          if (res.data.deletedCount > 0) {
+            alert("product deleted");
+            const restData = allOrders.filter((order) => order._id !== id);
+            setAllOrders(restData);
+          }
+        });
     }
   };
 
@@ -73,7 +75,7 @@ const ManageAllOrders = () => {
                 <TableCell align="center">
                   {order?.orderInfo?.customerName}
                 </TableCell>
-                {order.status === "pending" ? (
+                {order.status === "Pending" ? (
                   <TableCell
                     sx={{
                       bgcolor: "warning.main",

@@ -1,6 +1,19 @@
 # Bikerz
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Live website: [Bikerz](https://bikerz-9340f.web.app/).
+
+## Description
+
+This is a cycle buying and selling full stack website. It is a complete solution. It has a client side, a server side, and the login system is also implemented.
+
+## Functionalities
+
+- User can order any product.
+- User will have his/her own dashboard.
+- User can cancel the order.
+- User can add a review.
+- Admin has an admin dashboard.
+- Admin can add or delete a product.
 
 ## Available Scripts
 

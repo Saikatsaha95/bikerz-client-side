@@ -18,7 +18,7 @@ const MyOrder = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/myorders?email=${user.email}`)
+      .get(`https://warm-lake-37627.herokuapp.com/myorders?email=${user.email}`)
       .then((res) => setOrders(res.data));
   }, []);
   const reducer = (previousValue, currentValue) =>
@@ -28,13 +28,15 @@ const MyOrder = () => {
   const handleDelete = (id) => {
     const proceed = window.confirm("Are you sure, you want to delete?");
     if (proceed) {
-      axios.delete(`http://localhost:5000/orders/${id}`).then((res) => {
-        if (res.data.deletedCount > 0) {
-          alert("product deleted");
-          const restData = orders.filter((order) => order._id !== id);
-          setOrders(restData);
-        }
-      });
+      axios
+        .delete(`https://warm-lake-37627.herokuapp.com/orders/${id}`)
+        .then((res) => {
+          if (res.data.deletedCount > 0) {
+            alert("product deleted");
+            const restData = orders.filter((order) => order._id !== id);
+            setOrders(restData);
+          }
+        });
     }
   };
 
@@ -64,7 +66,7 @@ const MyOrder = () => {
                   </TableCell>
                   <TableCell align="center">{order.price}</TableCell>
                   <TableCell align="center">{user.displayName}</TableCell>
-                  {order.status === "pending" ? (
+                  {order.status === "Pending" ? (
                     <TableCell
                       sx={{
                         bgcolor: "warning.main",

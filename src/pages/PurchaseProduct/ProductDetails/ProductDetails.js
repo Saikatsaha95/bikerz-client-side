@@ -1,5 +1,4 @@
 import { Button } from "@mui/material";
-import { height } from "@mui/system";
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import PlaceOrderModal from "../PlaceOrderModal/PlaceOrderModal";
@@ -11,7 +10,7 @@ const ProductDetails = ({ id }) => {
   const handleClosePlaceOrder = () => setOpenPlaceOrder(false);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/products/${id}`)
+      .get(`https://warm-lake-37627.herokuapp.com/products/${id}`)
       .then((res) => setProduct(res.data));
   }, []);
 

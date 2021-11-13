@@ -9,7 +9,7 @@ const ProductSection = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:5000/products")
+      .get("https://warm-lake-37627.herokuapp.com/products")
       .then((res) => setProducts(res.data));
   }, []);
   return (

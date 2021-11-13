@@ -11,7 +11,7 @@ const AddReview = () => {
     data.name = user.displayName;
     data.email = user.email;
     axios
-      .post("http://localhost:5000/reviews", data)
+      .post("https://warm-lake-37627.herokuapp.com/reviews", data)
       .then((res) => console.log(res.data))
       .finally(() => reset());
   };
